@@ -11,6 +11,18 @@
 
   <body>
     <h1>The Music App</h1>
+
+    <% if logged_in? %>
+      <h2>Hello <%= current_user.email %> !</h2>
+      <form action="<%= session_url %>" method="POST">
+      <%= auth_token %>
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="Logout">
+      </form>
+    <% else %>
+      <a href="<%= new_session_url %>">Log in</a>
+      <a href="<%= new_user_url %>">Sign up</a>
+    <% end %>
     
 
     <% if flash[:errors] %>
