@@ -7,13 +7,13 @@
 #login_page .email {
     display: flex;
     justify-content: center;
-    padding: 5px;
+    padding: 3px;
 }
 
 #login_page .password {
     display: flex;
     justify-content: center;
-    padding: 5px;
+    padding: 3px;
 }
 
 #login_page .submit {

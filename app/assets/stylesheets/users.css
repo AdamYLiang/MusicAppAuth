@@ -7,13 +7,13 @@
 #signup_page .email {
     display: flex;
     justify-content: center;
-    padding: 5px;
+    padding: 3px;
 }
 
 #signup_page .password {
     display: flex;
     justify-content: center;
-    padding: 5px;
+    padding: 3px;
 }
 
 #signup_page .submit {
