@@ -1,0 +1,23 @@
+
+#signup_page h1 {
+    display: flex;
+    justify-content: center;
+}
+
+#signup_page .email {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+#signup_page .password {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+#signup_page .submit {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}

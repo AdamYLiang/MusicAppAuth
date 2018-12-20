@@ -1,13 +1,21 @@
+<div id="signup_page">
 <h1>Sign up!</h1>
 
 <form action="<%= users_url %>" method="POST">
 <%= auth_token %>
 
+<div class="email">
 <label for="email">Email: </label>
 <input type="text" id="email" name="user[email]" value="">
-<br>
+</div>
+
+<div class="password">
 <label for="password">Password: </label>
 <input type="password" id="password" name="user[password]" value="">
+</div>
 
+<div class="submit">
 <input type="submit" value="Sign up">
+</div>
 </form>
+</div>

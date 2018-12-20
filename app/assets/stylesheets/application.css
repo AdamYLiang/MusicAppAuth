@@ -13,3 +13,46 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+     width: 70%;
+     margin: auto;
+ }
+
+ header {
+     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+     font-size: 100px;
+     display: flex;
+     justify-content: center;
+ }
+
+ .login_content {
+     display: flex;
+     justify-content: flex-end;
+     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+ }
+
+ #submit_button {
+     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+     font-size: 20px;
+     background-color: #bdc3c7;
+     padding: 5px;
+     margin: 10px;
+     border-radius: 10%;
+
+ }
+
+ .login_content a {
+     background-color: #bdc3c7;
+     font-size: 20px;
+     padding: 5px;
+     margin: 10px;
+     border-radius: 10%;
+     text-decoration: none;
+     color: black;
+ }
+
+ .errors {
+     display: flex;
+     justify-content: center;
+ }
