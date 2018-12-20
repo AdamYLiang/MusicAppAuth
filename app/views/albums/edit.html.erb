@@ -4,7 +4,7 @@
 <%= auth_token %>
 <input type="hidden" name="_method" value="PATCH">
 
-Title: <input type="text" name="album[title]" value="">
+Title: <input type="text" name="album[title]" value="<%= @album.title %>">
 
 <select name="album[band_id]">
     <% Band.all.each do |band| %>
@@ -16,8 +16,8 @@ Title: <input type="text" name="album[title]" value="">
     <% end %>
 </select>
 
-Year: <input type="text" name="album[year]" value="">
-<input type="radio" name="album[live]" value="true"> Live
-<input type="radio" name="album[live]" value="false"> Studio
+Year: <input type="text" name="album[year]" value="<%= @album.year %>">
+<input type="radio" name="album[live]" value="true" <%= @album.live ? "checked" : "" %> > Live
+<input type="radio" name="album[live]" value="false"<%= @album.live ? "" : "checked" %>> Studio
 <input type="submit" value="Create">
 </form>
