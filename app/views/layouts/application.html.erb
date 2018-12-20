@@ -10,13 +10,16 @@
   </head>
 
   <body>
-    <header>The Music App</header>
-
+    <header>
+    <a href="<%= bands_url %>">The Music App</a>
+    </header>
+ 
     <% if logged_in? %>
       <form action="<%= session_url %>" method="POST">
       <%= auth_token %>
         <input type="hidden" name="_method" value="DELETE">
         <div class="login_content">
+        <a href=<%= user_url(current_user.id) %>>Account</a>
         <input id="submit_button" type="submit" value="Logout">
        </div>
       </form>

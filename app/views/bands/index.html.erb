@@ -3,8 +3,9 @@
 
 <ul>
 <% Band.all.each do |band| %>
-    <li><%= band.name %></li>
+    <li><a href="<%= band_url(band.id) %>"><%= band.name %> </a></li>
 <% end %>
 </ul>
 
+<h2><a href="<%= new_band_url %>">Add a band</a></h2>
 </div>
