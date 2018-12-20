@@ -18,6 +18,9 @@ class BandsController < ApplicationController
         render :new
     end
 
+    #TODO:
+    #Must be logged in to edit or destroy a band?
+
     def edit
         @band = Band.find(params[:id])
     end
