@@ -26,14 +26,14 @@ class User < ApplicationRecord
     #P assword=
     #E nsure session token
 
-    def self.find_by_user_credentials(email, password)
+    def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
         return user if user && user.is_password?(password)
         nil
     end
 
     def self.generate_session_token
-        SecureRandom::url_safebase64(16)
+        SecureRandom::urlsafe_base64(16)
     end
 
     def reset_session_token!
