@@ -1,0 +1,5 @@
+<h1><%= @track.title %></h1>
+<h2>By: <%= @track.band.name %></h2>
+<h2>Album: <%= @track.album.title %></h2>
+
+<a href="<%= album_url(@track.album.id) %>"><p>Back to album</p></a>
