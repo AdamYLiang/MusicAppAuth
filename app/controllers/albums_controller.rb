@@ -15,9 +15,17 @@ class AlbumsController < ApplicationController
     end
 
     def edit
+        @album = Album.find(params[:id])
     end
 
     def update 
+        @album = Album.find(params[:id])
+        if @album.update(album_params)
+            redirect_to album_url(@album.id)
+        else
+            flash.now[:errors] = @album.errors.full_messages
+            render :edit
+        end
     end
 
     def show
@@ -25,6 +33,10 @@ class AlbumsController < ApplicationController
     end
 
     def destroy
+        @album = Album.find(params[:id])
+        @band = @album.band
+        @album.destroy
+        redirect_to band_url(@band.id)
     end
 
     private

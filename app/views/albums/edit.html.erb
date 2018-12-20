@@ -1,0 +1,23 @@
+<h1>Editing <%= @album.title %></h1>
+
+<form action="<%= album_url %>" method="POST">
+<%= auth_token %>
+<input type="hidden" name="_method" value="PATCH">
+
+Title: <input type="text" name="album[title]" value="">
+
+<select name="album[band_id]">
+    <% Band.all.each do |band| %>
+        <% if band.id == @album.band_id %>
+            <option value="<%= band.id %>" selected><%= band.name %></option>
+        <% else %>
+            <option value="<%= band.id %>"><%= band.name %></option>
+        <% end %>
+    <% end %>
+</select>
+
+Year: <input type="text" name="album[year]" value="">
+<input type="radio" name="album[live]" value="true"> Live
+<input type="radio" name="album[live]" value="false"> Studio
+<input type="submit" value="Create">
+</form>
