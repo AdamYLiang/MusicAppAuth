@@ -16,6 +16,7 @@
 class Track < ApplicationRecord
     validates_presence_of :title, :ord, :band_id, :album_id
     validates :bonus, inclusion: { in: [true, false] }
+    validates :ord, uniqueness: { scope: :album_id }
 
     belongs_to :album,
         class_name: :Album,

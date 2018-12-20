@@ -14,6 +14,7 @@
 class Album < ApplicationRecord
     validates_presence_of :title, :year, :band
     validates :live, inclusion: { in: [true, false] }
+    validates :title, uniqueness: { scope: :band_id }
 
     belongs_to :band,
         class_name: :Band,

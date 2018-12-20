@@ -1,0 +1,35 @@
+<h1>Create a new track</h1>
+
+<form action="<%= tracks_url %>" method="POST">
+<%= auth_token %>
+Band: <select name="track[band_id]">
+    <% Band.all.each do |band| %>
+        <% if band.id == @band.id %>
+            <option value="<%= band.id %>" selected><%= band.name %></option>
+        <% else %>
+            <option value="<%= band.id %>"><%= band.name %></option>
+        <% end %>
+    <% end %>
+</select>
+<br>
+Album: <select name="track[album_id]">
+    <% @band.albums.each do |album| %>
+        <% if album.id == @album.id %>
+            <option value="<%= album.id %>" selected><%= album.title %></option>
+        <% else %>
+            <option value="<%= album.id %>"><%= album.title %></option>
+        <% end %>
+    <% end %>
+</select>
+
+<br>
+Title: <input type="text" name="track[title]" value="">
+<br>
+Track Number: <input type="text" name="track[ord]" value="">
+<br>
+Lyrics: <input type="text" name="track[lyrics]" value="">
+
+<input type="radio" name="track[bonus]" value="false" checked> Original Track
+<input type="radio" name="track[bonus]" value="true"> Bonus Track
+<input type="submit" value="Enter track">
+</form>
